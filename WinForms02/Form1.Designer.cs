@@ -45,6 +45,10 @@
             numericUpDown1 = new NumericUpDown();
             labelPriceWork = new Label();
             labelTotalPrice = new Label();
+            toolTip1 = new ToolTip(components);
+            textBox1 = new TextBox();
+            label4 = new Label();
+            labelEmailStatus = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
@@ -187,11 +191,40 @@
             labelTotalPrice.Size = new Size(0, 25);
             labelTotalPrice.TabIndex = 15;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(167, 336);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(448, 23);
+            textBox1.TabIndex = 16;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.Location = new Point(75, 329);
+            label4.Name = "label4";
+            label4.Size = new Size(86, 30);
+            label4.TabIndex = 17;
+            label4.Text = "ПОЧТА";
+            // 
+            // labelEmailStatus
+            // 
+            labelEmailStatus.AutoSize = true;
+            labelEmailStatus.Location = new Point(242, 309);
+            labelEmailStatus.Name = "labelEmailStatus";
+            labelEmailStatus.Size = new Size(0, 15);
+            labelEmailStatus.TabIndex = 18;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1112, 633);
+            Controls.Add(labelEmailStatus);
+            Controls.Add(label4);
+            Controls.Add(textBox1);
             Controls.Add(labelTotalPrice);
             Controls.Add(labelPriceWork);
             Controls.Add(numericUpDown1);
@@ -232,5 +265,9 @@
         private NumericUpDown numericUpDown1;
         private Label labelPriceWork;
         private Label labelTotalPrice;
+        private ToolTip toolTip1;
+        private TextBox textBox1;
+        private Label label4;
+        private Label labelEmailStatus;
     }
 }
