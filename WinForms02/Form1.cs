@@ -1,3 +1,6 @@
+using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Text.RegularExpressions;
 
 namespace WinForms02
@@ -5,6 +8,8 @@ namespace WinForms02
     public partial class Form1 : Form
     {
         private System.Windows.Forms.Timer timer;
+        private CultureInfo currentCulture;
+        private ResourceManager manager;
         public Form1()
         {
             InitializeComponent();
@@ -15,6 +20,8 @@ namespace WinForms02
             dateTimePicker1.ValueChanged += CalculateResult;
             dateTimePicker2.ValueChanged += CalculateResult;
             numericUpDown1.ValueChanged += CalculateResult;
+
+            SetCulture(Thread.CurrentThread.CurrentUICulture.Name == "en-US");
         }
 
 
@@ -104,12 +111,10 @@ namespace WinForms02
         {
             if (IsValidEmail(textBox1.Text))
             {
-                labelEmailStatus.Text = "Адрес электронной почты действителен.";
                 textBox1.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                labelEmailStatus.Text = "Адрес электронной почты неправильный.";
                 textBox1.ForeColor = System.Drawing.Color.Red;
                 toolTip1.Show("Адрес электронной почты должен соответствовать формату user@domain.com", textBox1);
             }
@@ -121,6 +126,39 @@ namespace WinForms02
             string pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
             Regex regex = new Regex(pattern);
             return regex.IsMatch(email);
+        }
+        
+        private void checkBoxLang_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCulture(checkBoxLang.Checked);
+
+        }
+
+        private void SetCulture(bool isEnglish)
+        {
+            if (isEnglish)
+            {
+                currentCulture = new CultureInfo("en-US");
+            } else
+            {
+                currentCulture = new CultureInfo("ru-RU");
+            }
+
+
+            Thread.CurrentThread.CurrentUICulture = currentCulture;
+            UpdateLanguage();
+        }
+
+        private void UpdateLanguage()
+        {
+            manager = new ResourceManager(typeof(Form1));
+            checkBoxLang.Text = manager.GetString("checkBoxLang.Text");
+            label4.Text = manager.GetString("label4.Text");
+            labelEndWork.Text = manager.GetString("labelEndWork.Text");
+            labelPriceWork.Text = manager.GetString("labelPriceWork.Text");
+            labelStartWork.Text = manager.GetString("labelStartWork.Text");
+            
+
         }
     }
 }
