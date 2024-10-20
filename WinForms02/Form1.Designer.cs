@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             timer1 = new System.Windows.Forms.Timer(components);
             progressBar1 = new ProgressBar();
             hScrollBarRed = new HScrollBar();
@@ -45,6 +46,11 @@
             numericUpDown1 = new NumericUpDown();
             labelPriceWork = new Label();
             labelTotalPrice = new Label();
+            toolTip1 = new ToolTip(components);
+            textBox1 = new TextBox();
+            label4 = new Label();
+            labelEmailStatus = new Label();
+            checkBoxLang = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
@@ -55,143 +61,138 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(33, 23);
+            resources.ApplyResources(progressBar1, "progressBar1");
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(399, 23);
-            progressBar1.TabIndex = 0;
+            toolTip1.SetToolTip(progressBar1, resources.GetString("progressBar1.ToolTip"));
             // 
             // hScrollBarRed
             // 
-            hScrollBarRed.Location = new Point(105, 173);
+            resources.ApplyResources(hScrollBarRed, "hScrollBarRed");
             hScrollBarRed.Maximum = 255;
             hScrollBarRed.Name = "hScrollBarRed";
-            hScrollBarRed.Size = new Size(338, 29);
-            hScrollBarRed.TabIndex = 2;
+            toolTip1.SetToolTip(hScrollBarRed, resources.GetString("hScrollBarRed.ToolTip"));
             hScrollBarRed.ValueChanged += hScrollBarRed_ValueChanged;
             // 
             // hScrollBarGreen
             // 
-            hScrollBarGreen.Location = new Point(105, 218);
+            resources.ApplyResources(hScrollBarGreen, "hScrollBarGreen");
             hScrollBarGreen.Maximum = 255;
             hScrollBarGreen.Name = "hScrollBarGreen";
-            hScrollBarGreen.Size = new Size(338, 29);
-            hScrollBarGreen.TabIndex = 3;
+            toolTip1.SetToolTip(hScrollBarGreen, resources.GetString("hScrollBarGreen.ToolTip"));
             hScrollBarGreen.ValueChanged += hScrollBarGreen_ValueChanged_1;
             // 
             // hScrollBarBlue
             // 
-            hScrollBarBlue.Location = new Point(105, 257);
+            resources.ApplyResources(hScrollBarBlue, "hScrollBarBlue");
             hScrollBarBlue.Maximum = 255;
             hScrollBarBlue.Name = "hScrollBarBlue";
-            hScrollBarBlue.Size = new Size(338, 29);
-            hScrollBarBlue.TabIndex = 4;
+            toolTip1.SetToolTip(hScrollBarBlue, resources.GetString("hScrollBarBlue.ToolTip"));
             hScrollBarBlue.ValueChanged += hScrollBarBlue_ValueChanged;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.Location = new Point(75, 173);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(27, 30);
-            label1.TabIndex = 5;
-            label1.Text = "R";
+            toolTip1.SetToolTip(label1, resources.GetString("label1.ToolTip"));
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(75, 217);
+            resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            label2.Size = new Size(28, 30);
-            label2.TabIndex = 6;
-            label2.Text = "G";
+            toolTip1.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label3.Location = new Point(75, 256);
+            resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            label3.Size = new Size(26, 30);
-            label3.TabIndex = 7;
-            label3.Text = "B";
+            toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // buttonColor
             // 
+            resources.ApplyResources(buttonColor, "buttonColor");
             buttonColor.BackColor = Color.Silver;
-            buttonColor.Location = new Point(477, 173);
             buttonColor.Name = "buttonColor";
-            buttonColor.Size = new Size(123, 113);
-            buttonColor.TabIndex = 8;
+            toolTip1.SetToolTip(buttonColor, resources.GetString("buttonColor.ToolTip"));
             buttonColor.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(668, 72);
+            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(168, 23);
-            dateTimePicker1.TabIndex = 9;
+            toolTip1.SetToolTip(dateTimePicker1, resources.GetString("dateTimePicker1.ToolTip"));
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(668, 135);
+            resources.ApplyResources(dateTimePicker2, "dateTimePicker2");
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(168, 23);
-            dateTimePicker2.TabIndex = 10;
+            toolTip1.SetToolTip(dateTimePicker2, resources.GetString("dateTimePicker2.ToolTip"));
             // 
             // labelStartWork
             // 
-            labelStartWork.AutoSize = true;
-            labelStartWork.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelStartWork.Location = new Point(669, 48);
+            resources.ApplyResources(labelStartWork, "labelStartWork");
             labelStartWork.Name = "labelStartWork";
-            labelStartWork.Size = new Size(262, 21);
-            labelStartWork.TabIndex = 11;
-            labelStartWork.Text = "Введите дату начало работ";
+            toolTip1.SetToolTip(labelStartWork, resources.GetString("labelStartWork.ToolTip"));
             // 
             // labelEndWork
             // 
-            labelEndWork.AutoSize = true;
-            labelEndWork.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelEndWork.Location = new Point(668, 111);
+            resources.ApplyResources(labelEndWork, "labelEndWork");
             labelEndWork.Name = "labelEndWork";
-            labelEndWork.Size = new Size(290, 21);
-            labelEndWork.TabIndex = 12;
-            labelEndWork.Text = "Введите дату окончания работ";
+            toolTip1.SetToolTip(labelEndWork, resources.GetString("labelEndWork.ToolTip"));
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(669, 196);
+            resources.ApplyResources(numericUpDown1, "numericUpDown1");
             numericUpDown1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(167, 23);
-            numericUpDown1.TabIndex = 13;
+            toolTip1.SetToolTip(numericUpDown1, resources.GetString("numericUpDown1.ToolTip"));
             // 
             // labelPriceWork
             // 
-            labelPriceWork.AutoSize = true;
-            labelPriceWork.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPriceWork.Location = new Point(669, 173);
+            resources.ApplyResources(labelPriceWork, "labelPriceWork");
             labelPriceWork.Name = "labelPriceWork";
-            labelPriceWork.Size = new Size(214, 21);
-            labelPriceWork.TabIndex = 14;
-            labelPriceWork.Text = "Введите цену 1-ог дня";
+            toolTip1.SetToolTip(labelPriceWork, resources.GetString("labelPriceWork.ToolTip"));
             // 
             // labelTotalPrice
             // 
-            labelTotalPrice.AutoSize = true;
-            labelTotalPrice.Font = new Font("MV Boli", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTotalPrice.Location = new Point(668, 256);
+            resources.ApplyResources(labelTotalPrice, "labelTotalPrice");
             labelTotalPrice.Name = "labelTotalPrice";
-            labelTotalPrice.Size = new Size(0, 25);
-            labelTotalPrice.TabIndex = 15;
+            toolTip1.SetToolTip(labelTotalPrice, resources.GetString("labelTotalPrice.ToolTip"));
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(textBox1, "textBox1");
+            textBox1.Name = "textBox1";
+            toolTip1.SetToolTip(textBox1, resources.GetString("textBox1.ToolTip"));
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
+            toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip"));
+            // 
+            // labelEmailStatus
+            // 
+            resources.ApplyResources(labelEmailStatus, "labelEmailStatus");
+            labelEmailStatus.Name = "labelEmailStatus";
+            toolTip1.SetToolTip(labelEmailStatus, resources.GetString("labelEmailStatus.ToolTip"));
+            // 
+            // checkBoxLang
+            // 
+            resources.ApplyResources(checkBoxLang, "checkBoxLang");
+            checkBoxLang.Name = "checkBoxLang";
+            toolTip1.SetToolTip(checkBoxLang, resources.GetString("checkBoxLang.ToolTip"));
+            checkBoxLang.UseVisualStyleBackColor = true;
+            checkBoxLang.CheckedChanged += checkBoxLang_CheckedChanged;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1112, 633);
+            Controls.Add(checkBoxLang);
+            Controls.Add(labelEmailStatus);
+            Controls.Add(label4);
+            Controls.Add(textBox1);
             Controls.Add(labelTotalPrice);
             Controls.Add(labelPriceWork);
             Controls.Add(numericUpDown1);
@@ -208,7 +209,7 @@
             Controls.Add(hScrollBarRed);
             Controls.Add(progressBar1);
             Name = "Form1";
-            Text = "Form1";
+            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -232,5 +233,10 @@
         private NumericUpDown numericUpDown1;
         private Label labelPriceWork;
         private Label labelTotalPrice;
+        private ToolTip toolTip1;
+        private TextBox textBox1;
+        private Label label4;
+        private Label labelEmailStatus;
+        private CheckBox checkBoxLang;
     }
 }
